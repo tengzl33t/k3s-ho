@@ -17,5 +17,5 @@ spec:
   secretTemplate:
     annotations:
       reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "traefik,echo,pve,xui,vw,immich,sxng,anubis,authelia"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "traefik,echo,pve,xui,vw,immich,sxng,anubis,authelia,hyvel"
       reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"

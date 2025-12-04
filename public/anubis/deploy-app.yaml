@@ -35,7 +35,7 @@ spec:
             - name: "TARGET"
               value: " "
             - name: "REDIRECT_DOMAINS"
-              value: "echo.hyvel.eu,vault.hyvel.eu,xui.hyvel.eu,imch.hyvel.eu,auth.hyvel.eu"
+              value: "hyvel.eu,echo.hyvel.eu,vault.hyvel.eu,xui.hyvel.eu,imch.hyvel.eu,auth.hyvel.eu"
             - name: "COOKIE_DOMAIN"
               value: "hyvel.eu"
             - name: "PUBLIC_URL"
