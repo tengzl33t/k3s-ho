@@ -19,3 +19,4 @@ public/vaultwarden/secrets-app.yaml filter=git-crypt diff=git-crypt
 public/vaultwarden/secrets-db.yaml filter=git-crypt diff=git-crypt
 public/xui/ingress.yaml filter=git-crypt diff=git-crypt
 public/hyvel/secrets-app.yaml filter=git-crypt diff=git-crypt
+public/anubis/config-app.yaml filter=git-crypt diff=git-crypt
