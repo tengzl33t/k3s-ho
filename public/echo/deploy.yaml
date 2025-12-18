@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: echo
-          image: jmalloc/echo-server
+          image: jmalloc/echo-server:v0.3.7
           livenessProbe:
             httpGet:
               path: /

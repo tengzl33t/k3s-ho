@@ -55,8 +55,12 @@ spec:
   routes:
     - match: Host(`ldap.ho.hyvel.eu`)
       middlewares:
-#        - name: security-headers
-#          namespace: lldap
+        - name: security-headers
+          namespace: lldap
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service
