@@ -10,7 +10,6 @@ spec:
     stsSeconds: 63072000
     customResponseHeaders:
       server: ""
-      limao: "sasisa"
     frameDeny: true
     customFrameOptionsValue: "SAMEORIGIN"
     contentTypeNosniff: true
@@ -57,7 +56,9 @@ spec:
     - match: Host(`auth.hyvel.eu`) && PathPrefix(`/api/authz/forward-auth`)
       middlewares:
         - name: security-headers
-          namespace: xui
+          namespace: authelia
+        - name: compress
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service
@@ -69,6 +70,10 @@ spec:
           namespace: traefik
         - name: security-headers
           namespace: authelia
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service

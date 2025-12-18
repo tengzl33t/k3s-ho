@@ -57,6 +57,10 @@ spec:
           namespace: traefik
         - name: security-headers
           namespace: immich
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service

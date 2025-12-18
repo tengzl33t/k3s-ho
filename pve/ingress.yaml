@@ -1,4 +1,24 @@
 apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: security-headers
+  namespace: pve
+spec:
+  headers:
+    stsIncludeSubdomains: true
+    stsPreload: true
+    stsSeconds: 63072000
+    customResponseHeaders:
+      x-powered-by: ""
+    frameDeny: true
+    customFrameOptionsValue: "SAMEORIGIN"
+    contentTypeNosniff: true
+    referrerPolicy: "strict-origin-when-cross-origin"
+    permissionsPolicy: "camera=(), microphone=(), geolocation=()"
+
+---
+
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: ingress-plain
@@ -31,7 +51,31 @@ spec:
   entryPoints:
     - websecure
   routes:
+    - match: Host(`pve.hyvel.eu`) && PathRegexp(`^.*\.(woff2?|ttf|eot|otf)$`)
+      middlewares:
+        - name: security-headers
+          namespace: pve
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
+      kind: Rule
+      services:
+        - kind: Service
+          name: pve-svc
+          port: 8006
+          scheme: https
+          serversTransport: pve-transport
     - match: Host(`pve.hyvel.eu`)
+      middlewares:
+        - name: anubis
+          namespace: traefik
+        - name: security-headers
+          namespace: pve
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service

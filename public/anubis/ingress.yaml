@@ -57,6 +57,10 @@ spec:
       middlewares:
         - name: security-headers
           namespace: anubis
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service
