@@ -30,7 +30,7 @@ spec:
             claimName: config
       containers:
         - name: qbt
-          image: linuxserver/qbittorrent:5.1.2
+          image: linuxserver/qbittorrent:5.1.4
           env:
             - name: WEBUI_PORT
               value: "7530"

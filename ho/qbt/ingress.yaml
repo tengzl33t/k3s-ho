@@ -57,6 +57,10 @@ spec:
           namespace: qbt
         - name: authelia
           namespace: traefik
+        - name: compress
+          namespace: traefik
+        - name: cache
+          namespace: traefik
       kind: Rule
       services:
         - kind: Service
