@@ -16,6 +16,4 @@ spec:
     - "*.hyvel.eu"
   secretTemplate:
     annotations:
-      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "traefik,echo,pve,xui,vw,immich,sxng,anubis,authelia,hyvel"
-      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
+      replicator.v1.mittwald.de/replicate-to: "echo,pve,xui,vw,immich,sxng,anubis,authelia,hyvel"

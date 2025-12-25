@@ -16,6 +16,4 @@ spec:
     - "*.ho.hyvel.eu"
   secretTemplate:
     annotations:
-      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
-      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "traefik,pve,qbt,ts,lldap,scanjs"
-      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
+      replicator.v1.mittwald.de/replicate-to: "traefik,pve,qbt,ts,lldap,scanjs"
