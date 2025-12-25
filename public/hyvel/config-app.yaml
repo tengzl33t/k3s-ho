@@ -11,6 +11,11 @@ data:
 
       root /data/current/public;
       index index.html index.htm;
+      
+      include mime.types;
+      types {
+        application/manifest+json webmanifest;
+      }
 
       location / {
         try_files $uri $uri/ =404;
