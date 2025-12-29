@@ -58,8 +58,6 @@ spec:
           namespace: hyvel
         - name: compress
           namespace: traefik
-        - name: cache
-          namespace: traefik
       kind: Rule
       services:
         - kind: Service
@@ -73,8 +71,6 @@ spec:
         - name: security-headers
           namespace: hyvel
         - name: compress
-          namespace: traefik
-        - name: cache
           namespace: traefik
       kind: Rule
       services:
